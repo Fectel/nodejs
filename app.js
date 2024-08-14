@@ -16,10 +16,11 @@ const app = express()
     app)
     ,  io = new Server(server)
 server.listen(3000)
+app.listen(server)
 
-app.start = app.listen = function(){
-  return server.listen.apply(server, arguments)
-}
+// app.start = app.listen = function(){
+//   return server.listen.apply(server, arguments)
+// }
 
 console.log(app, "APPP");
 console.log(server, "server!!!!")
@@ -49,6 +50,8 @@ io.on("connection", (socket) => {
 // });
 
 app.get("/", (req, res) => {
+  console.log("app.get")
     res.send("Hello World");
 });
+
 
