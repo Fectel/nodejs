@@ -22,7 +22,7 @@ io.on("connection", (socket) => {
 })
 
 
-app.get("/", (req, res) => {
+httpsServer.get("/", (req, res) => {
     res.send("Hello World");
 });
 
@@ -31,5 +31,5 @@ app.get("/", (req, res) => {
 //   console.log(`Server running at {PORT}/`);
 // });
 httpsServer.listen(PORT, () => {
-  console.log(`Socket.io and Express Server running at ${PORT}/`);
+  console.log(`Socket.io and Express Server running at ${PORT}`);
 });
