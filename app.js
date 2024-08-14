@@ -22,7 +22,7 @@ app.start = app.listen = function(){
 }
 
 console.log(app, "APPP");
-console.log(server, "server!!!!")l
+console.log(server, "server!!!!")
 
 
 // console.log(app, "<--- APPP")
