@@ -6,9 +6,8 @@ const {createServer } = require('https');
 const { Server } = require("socket.io");
 const https = require('https');
 
-const app = express();
-
-const server = https.createServer(
+const app = express()
+    , server = https.createServer(
   {
   key: fs.readFileSync('./key.pem'),
   cert: fs.readFileSync('./cert.pem')
@@ -16,8 +15,9 @@ const server = https.createServer(
     app).listen(3000, () =>{
   console.log("https Started")
 })
-const io = new Server(server);
-console.log(app, "<--- APPP")
+  , io = io.listen(server);
+server.listen(3000)
+// console.log(app, "<--- APPP")
 
 // const httpsServer = createServer({
 //   key: fs.readFileSync('./key.pem'),
@@ -26,7 +26,7 @@ console.log(app, "<--- APPP")
 // const io = new Server(httpsServer);
 
 
-const PORT = 3000;
+// const PORT = 3000;
 
 // socket.io working
 io.on("connection", (socket) => {
