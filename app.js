@@ -21,6 +21,10 @@ app.start = app.listen = function(){
   return server.listen.apply(server, arguments)
 }
 
+console.log(app, "APPP");
+console.log(server, "server!!!!")l
+
+
 // console.log(app, "<--- APPP")
 
 // const httpsServer = createServer({
@@ -43,9 +47,6 @@ io.on("connection", (socket) => {
 // httpsServer.listen(PORT, () => {
 //   console.log(`Socket.io and Express Server running at ${PORT}`);
 // });
-
-console.log(app, "APPP")
-console.log(server, "server!!!!")
 
 app.get("/", (req, res) => {
     res.send("Hello World");
