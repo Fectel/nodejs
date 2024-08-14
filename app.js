@@ -44,6 +44,9 @@ io.on("connection", (socket) => {
 //   console.log(`Socket.io and Express Server running at ${PORT}`);
 // });
 
+console.log(app, "APPP")
+console.log(server, "server!!!!")
+
 app.get("/", (req, res) => {
     res.send("Hello World");
 });
