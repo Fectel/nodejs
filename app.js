@@ -20,12 +20,12 @@ io.on("connection", (socket) => {
 
   console.log("socket.io is connected")
 })
-// app.listen(PORT, () => {
-//   console.log(`Server running at {PORT}/`);
-// });
-httpsServer.listen(PORT, () => {
-  console.log(`Socket.io and Express Server running at ${PORT}`);
+app.listen(PORT, () => {
+  console.log(`Server running at {PORT}/`);
 });
+// httpsServer.listen(PORT, () => {
+//   console.log(`Socket.io and Express Server running at ${PORT}`);
+// });
 
 app.get("/", (req, res) => {
     res.send("Hello World");
