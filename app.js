@@ -4,10 +4,16 @@ const indexRouter = require('./routes/index');
 const fs = require('fs');
 const {createServer } = require('https');
 const { Server } = require("socket.io");
+const https = require('https');
 
 const app = express();
 
-const server = https.createServer(app).listen(3000, () =>{
+const server = https.createServer(
+  {
+  key: fs.readFileSync('./key.pem'),
+  cert: fs.readFileSync('./cert.pem')
+  },
+    app).listen(3000, () =>{
   console.log("https Started")
 })
 var io = require('socket.io').listen(server);
