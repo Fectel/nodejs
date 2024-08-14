@@ -16,6 +16,11 @@ const app = express()
     app)
     ,  io = new Server(server)
 server.listen(3000)
+
+app.start = app.listen = function(){
+  return server.listen.apply(server, arguments)
+}
+
 // console.log(app, "<--- APPP")
 
 // const httpsServer = createServer({
