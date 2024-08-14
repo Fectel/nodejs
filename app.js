@@ -14,6 +14,7 @@ const httpsServer = createServer({
   key: fs.readFileSync('./key.pem'),
   cert: fs.readFileSync('./cert.pem')
 },app);
+const io = new Server(httpsServer);
 
 // socket.io working
 io.on("connection", (socket) => {
