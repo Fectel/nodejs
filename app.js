@@ -3,7 +3,8 @@ const path = require('path');
 const indexRouter = require('./routes/index');
 const fs = require('fs');
 const {createServer } = require('https');
-const { Server } = require("socket.io");
+// const { Server } = require("socket.io");
+const io = require("socket.io");
 const https = require('https');
 
 const app = express()
@@ -12,9 +13,7 @@ const app = express()
   key: fs.readFileSync('./key.pem'),
   cert: fs.readFileSync('./cert.pem')
   },
-    app).listen(3000, () =>{
-  console.log("https Started")
-})
+    app)
   , io = io.listen(server);
 server.listen(3000)
 // console.log(app, "<--- APPP")
