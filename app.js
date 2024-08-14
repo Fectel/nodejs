@@ -17,6 +17,7 @@ const server = https.createServer(
   console.log("https Started")
 })
 const io = new Server(server);
+console.log(app, "<--- APPP")
 
 // const httpsServer = createServer({
 //   key: fs.readFileSync('./key.pem'),
