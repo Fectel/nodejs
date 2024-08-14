@@ -16,7 +16,10 @@ const PORT = 3000;
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Use the router for handling routes
-app.use('/', indexRouter);
+// app.use('/', indexRouter);
+app.get("/", (req, res) => {
+    res.send("Hello World");
+});
 
 // Catch-all route for handling 404 errors
 app.use((req, res, next) => {
