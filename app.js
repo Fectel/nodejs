@@ -39,7 +39,7 @@ io.on("connection", (socket) => {
 //   console.log(`Socket.io and Express Server running at ${PORT}`);
 // });
 
-app.get("/", (req, res) => {
+server.get("/", (req, res) => {
     res.send("Hello World");
 });
 
