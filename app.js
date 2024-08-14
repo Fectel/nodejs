@@ -14,7 +14,8 @@ const app = express()
   cert: fs.readFileSync('./cert.pem')
   },
     app)
-  , io = io.listen(server);
+  
+io.listen(server);
 server.listen(3000)
 // console.log(app, "<--- APPP")
 
