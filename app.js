@@ -12,9 +12,9 @@ const app = express()
     app)
     ,  io = new Server(server)
 
-app.listen(3000)
-server.listen(app)
-// server.listen(3000)
+// app.listen(3000)
+// server.listen(app)
+server.listen(3000)
 // app.listen(server)
 
 io.on("connection", (socket) => {
