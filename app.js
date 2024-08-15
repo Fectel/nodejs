@@ -10,14 +10,9 @@ const app = express()
   cert: fs.readFileSync('./cert.pem')
   },
     app)
-    ,  io = new Server(server, {
-      cors: {
-        origin: "https://mariachichingon.com/",
-        methods: ['GET', 'POST']
+    ,  io = new Server(server)
 
-      }
-    })
-
+    io.origins('*:*')
 // app.listen(3000)
 // server.listen(app)
 server.listen(2096)
