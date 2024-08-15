@@ -9,7 +9,7 @@ const app = express()
   key: fs.readFileSync('./key.pem'),
   cert: fs.readFileSync('./cert.pem')
   },
-    app).listen(8443, () => {console.log(`Server listening on port ${8443}`)})
+    app)
     ,  io = new Server(server, {
       cors: {
         origin: "https://mariachichingon.com/",
@@ -20,7 +20,7 @@ const app = express()
 
 // app.listen(3000)
 // server.listen(app)
-// server.listen(8443)
+server.listen(8443)
 app.listen(server)
 
 io.on("connection", (socket) => {
