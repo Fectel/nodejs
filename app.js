@@ -9,12 +9,12 @@ const app = express()
   key: fs.readFileSync('./key.pem'),
   cert: fs.readFileSync('./cert.pem')
   },
-    app)
+    app).listen(8443, () => {console.log(`Server listening on port ${8443}`)})
     ,  io = new Server(server)
 
 // app.listen(3000)
 // server.listen(app)
-server.listen(8443)
+// server.listen(8443)
 app.listen(server)
 
 io.on("connection", (socket) => {
