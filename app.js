@@ -14,7 +14,7 @@ const app = express()
 
 // app.listen(3000)
 // server.listen(app)
-server.listen(3000)
+server.listen(8443)
 app.listen(server)
 
 io.on("connection", (socket) => {
