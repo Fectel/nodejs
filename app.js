@@ -20,7 +20,7 @@ const app = express()
 
 // app.listen(3000)
 // server.listen(app)
-server.listen(8443)
+server.listen(2096)
 app.listen(server)
 
 io.on("connection", (socket) => {
