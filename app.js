@@ -10,7 +10,13 @@ const app = express()
   cert: fs.readFileSync('./cert.pem')
   },
     app).listen(8443, () => {console.log(`Server listening on port ${8443}`)})
-    ,  io = new Server(server)
+    ,  io = new Server(server, {
+      cors: {
+        origin: "https://mariachichingon.com/",
+        methods: ['GET', 'POST']
+
+      }
+    })
 
 // app.listen(3000)
 // server.listen(app)
