@@ -6,7 +6,7 @@ const WebSocket = require('ws');
 
 
 // const app = express()
-    , server = https.createServer(
+    const server = https.createServer(
   {
   key: fs.readFileSync('./key.pem'),
   cert: fs.readFileSync('./cert.pem')
