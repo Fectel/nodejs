@@ -2,6 +2,8 @@ const express = require('express');
 const fs = require('fs');
 const { Server } = require("socket.io");
 const https = require('https');
+const ws = require('ws');
+
 
 const app = express()
     , server = https.createServer(
@@ -10,17 +12,21 @@ const app = express()
   cert: fs.readFileSync('./cert.pem')
   },
     app)
-    ,  io = new Server(server, {origins: '*:*'})
+    // ,  io = new Server(server, {origins: '*:*'})
 
-// app.listen(3000)
-// server.listen(app)
+
+    const wss = new ws.Server({server});
+   
 server.listen(2096)
 app.listen(server)
-
-io.on("connection", (socket) => {
-
-  console.log("socket.io is connected")
+wss.on('connection', function connection(ws) {
+  console.log("WS is Connected!!")
 })
+
+// io.on("connection", (socket) => {
+
+//   console.log("socket.io is connected")
+// })
 app.get("/", (req, res) => {
   console.log("app.get")
     res.send("Hello World");
