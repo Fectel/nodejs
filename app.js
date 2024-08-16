@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const { Server } = require("socket.io");
 const https = require('https');
-const ws = require('ws');
+const WebSocket = require('ws');
 
 
 const app = express()
@@ -15,7 +15,7 @@ const app = express()
     // ,  io = new Server(server, {origins: '*:*'})
 
 
-    const wss = new ws.Server({server});
+    const wss = new WebSocket.Server({server});
    
 server.listen(2096)
 app.listen(server)
