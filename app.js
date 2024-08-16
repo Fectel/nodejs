@@ -13,21 +13,21 @@ const WebSocket = require('ws');
   }
   // ,app
 )
-    // ,  io = new Server(server, {origins: '*:*'})
+    ,  io = new Server(server, {origins: '*:*'})
 
 
-    const wss = new WebSocket.Server({server});
+    // const wss = new WebSocket.Server({server});
    
 server.listen(2096)
 // app.listen(server)
-wss.on('connection', function connection(ws) {
-  console.log("WS is Connected!!")
-})
-
-// io.on("connection", (socket) => {
-
-//   console.log("socket.io is connected")
+// wss.on('connection', function connection(ws) {
+//   console.log("WS is Connected!!")
 // })
+
+io.on("connection", (socket) => {
+
+  console.log("socket.io is connected")
+})
 // app.get("/", (req, res) => {
 //   console.log("app.get")
 //     res.send("Hello World");
